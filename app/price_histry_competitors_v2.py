@@ -8,7 +8,7 @@ class OdooAuth:
     def __init__(self):
         self.db = "db_odoo"
         self.username = "admin"
-        self.password = "admin"
+        self.password = "TyXdcirZQYQp5r7"
         self.url = "http://0.0.0.0:8070/"
 
     def connect_to_odoo_api_with_auth(self) -> dict:
