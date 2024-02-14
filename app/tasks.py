@@ -122,13 +122,13 @@ class CreatePriceHistoryMPStatsWorkflow:
     async def run(self) -> None:
         await workflow.execute_activity(
             parsing_mp_stats_activity,
-            start_to_close_timeout=timedelta(seconds=20000),
+            start_to_close_timeout=timedelta(seconds=200000),
             retry_policy=RetryPolicy(maximum_interval=timedelta(hours=24)),
         )
 
         await workflow.execute_activity(
             send_in_odoo_activity,
-            start_to_close_timeout=timedelta(seconds=20000),
+            start_to_close_timeout=timedelta(seconds=200000),
             retry_policy=RetryPolicy(maximum_interval=timedelta(hours=24)),
         )
 

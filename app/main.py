@@ -26,7 +26,7 @@ def get_request_mpstats(token_mpstats: str, sku: int):
     response = requests.get(url, headers=headers)
 
     if response.status_code != 200:
-        raise ValueError(f"MP status: {response.status_code}")
+        raise ValueError(f"MP status: {response.status_code}, {response.text}")
     r_json = response.json()
     ad = r_json[-1]
     return sku, ad
